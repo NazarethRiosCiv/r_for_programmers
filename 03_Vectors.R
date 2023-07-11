@@ -1,11 +1,12 @@
-#### Vectors in R ####
 
-# A vector contains objects that are all the same variable type.
-# Vectors are the most basic data structure in R
+#### Vectors in R #################################################################################
 
-### Initiating a Vector ###
+# A vector contains objects that are all the same variable type. Vectors are the most basic data 
+# structure in R.
 
-# Vectors can be lists of numbers, character objects, or logical objects.
+## Initiating a Vector ****************************************************************************
+
+# Vectors can be lists of numbers, character objects, or logical objects:
 customers <- c(47, 40, 38, 42, 56, 72, 70)
 
 # The following functions return different properties of a vector:
@@ -16,12 +17,16 @@ customers <- c(47, 40, 38, 42, 56, 72, 70)
 #   range()  returns the minimum and maximum values of a numeric vector
 
 length(customers)
+
 class(customers)
+
 min(customers)
+
 max(customers)
+
 range(customers)
 
-### Subsetting Within a Vector ###
+## Sub-setting Within a Vector ********************************************************************
 
 # We can select a particular section of a vector using square brackets:
 customers[2]                     # returns the second element
@@ -29,26 +34,20 @@ customers[2:4]                   # returns second, third, and fourth elements
 customers[c(2, 4)]               # returns the second and fourth elements
 customers[3:length(customers)]   # returns all elements starting from the third
 
-# The which() function returns the index(s) of which elements meet the given 
-# criteria. We can call the which() function within the brackets to select
-# the elements that meet the criteria.
+# The which() function returns the index(s) of which elements meet the given criteria. We can call 
+# the which() function within the brackets to select the elements that meet the criteria.
 
-# Print the indexes of days with more than 45 days
+# Print the indexes of days with more than 45 days:
 which(customers > 45)
 
-# Print the value of each day with more than 45 customers
+# Print the value of each day with more than 45 customers:
 customers[which(customers > 45)]
 
-### Replacing Elements of a Vector ###
+## Replacing Elements of a Vector *****************************************************************
 
-# We can change a specific element in a vector by assigning a new value to
-# that selected element:
+# We can change a specific element in a vector by assigning a new value to that selected element:
 customers[3] <- 25
 
-# We can use the which() function to select specific elements to replace 
-# based on specific criteria:
+# We can use the which() function to select specific elements to replace based on specific 
+# criteria:
 customers[which(customers < 50)] <- 0
-
-
-
-
